@@ -1,12 +1,15 @@
-﻿<Application x:Class="MHW_Shop_Editor.App"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+<Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:MHWShopEditor"
-             StartupUri="MainWindow.xaml">
+             x:Class="MHWShopEditor.App"
+             RequestedThemeVariant="Default">
+    <Application.Styles>
+        <FluentTheme />
+    </Application.Styles>
+
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Lang/eng.xaml" />
+                <ResourceInclude Source="avares://MHWShopEditor/Lang.eng.axaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

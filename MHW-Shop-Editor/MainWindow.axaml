@@ -1,0 +1,94 @@
+<Window x:Class="MHWShopEditor.MainWindow"
+        xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MHWShopEditor"
+        x:DataType="local:MainWindow"
+        mc:Ignorable="d" Height="450" Width="800" Title="{DynamicResource title}"
+        Name="MainWindowRoot"
+        FontSize="{Binding AppFontSize}">
+
+    <Grid RowDefinitions="Auto, *">
+        <Menu Grid.Row="0" FontSize="{Binding AppFontSize}">
+            <MenuItem Header="{DynamicResource file}" FontSize="{Binding AppFontSize}">
+                <MenuItem Header="{DynamicResource open}" Click="openFile" FontSize="{Binding AppFontSize}"/>
+                <MenuItem Header="{DynamicResource save}" Click="saveFile" FontSize="{Binding AppFontSize}"/>
+            </MenuItem>
+            <!-- Settings Menu Removed -->
+            <MenuItem Header="{DynamicResource lang}" FontSize="{Binding AppFontSize}">
+                <MenuItem StaysOpenOnClick="True" FontSize="{Binding AppFontSize}">
+                    <MenuItem.Header>
+                        <ComboBox Width="150" SelectionChanged="ComboBox_SelectionChanged" SelectedIndex="{Binding CurrentLanguageIndex}" FontSize="{Binding AppFontSize}">
+                            <ComboBoxItem Content="Arabic" Tag="ara" FontSize="{Binding AppFontSize}"/>
+                            <ComboBoxItem Content="Chinese (S)" Tag="chS" FontSize="{Binding AppFontSize}"/>
+                            <ComboBoxItem Content="Chinese (T)" Tag="chT" FontSize="{Binding AppFontSize}"/>
+                            <ComboBoxItem Content="English" Tag="eng" FontSize="{Binding AppFontSize}"/>
+                            <ComboBoxItem Content="French" Tag="fre" FontSize="{Binding AppFontSize}"/>
+                            <ComboBoxItem Content="German" Tag="ger" FontSize="{Binding AppFontSize}"/>
+                            <ComboBoxItem Content="Italian" Tag="ita" FontSize="{Binding AppFontSize}"/>
+                            <ComboBoxItem Content="Japanese" Tag="jpn" FontSize="{Binding AppFontSize}"/>
+                            <ComboBoxItem Content="Korean" Tag="kor" FontSize="{Binding AppFontSize}"/>
+                            <ComboBoxItem Content="Polish" Tag="pol" FontSize="{Binding AppFontSize}"/>
+                            <ComboBoxItem Content="Portuguese (B)" Tag="ptB" FontSize="{Binding AppFontSize}"/>
+                            <ComboBoxItem Content="Russian" Tag="rus" FontSize="{Binding AppFontSize}"/>
+                            <ComboBoxItem Content="Spanish" Tag="spa" FontSize="{Binding AppFontSize}"/>
+                        </ComboBox>
+                    </MenuItem.Header>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+
+        <Grid Grid.Row="1" ColumnDefinitions="*, Auto, *, Auto" Margin="10">
+            <!-- Input Column -->
+            <Grid Grid.Column="0" RowDefinitions="Auto, *">
+                <TextBox Name="InputFilter" Grid.Row="0" Margin="0,0,0,5" Text="{Binding filterInputText}" FontSize="{Binding AppFontSize}"/>
+                <ListBox Name="input" Grid.Row="1" SelectionMode="Multiple" ItemsSource="{Binding filteredInput}" DoubleTapped="input_DoubleTapped" FontSize="{Binding AppFontSize}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}" FontSize="{Binding $parent[Window].((local:MainWindow)DataContext).AppFontSize}"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Grid>
+
+            <!-- Transfer Buttons Column -->
+            <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="10,0">
+                <Button Content="-&gt;" Width="50" Click="Send_Out" Margin="0,0,0,50" HorizontalContentAlignment="Center" FontSize="{Binding AppFontSize}"/>
+                <Button Content="&lt;-" Width="50" Click="Send_In" HorizontalContentAlignment="Center" FontSize="{Binding AppFontSize}"/>
+            </StackPanel>
+
+            <!-- Output Column -->
+            <Grid Grid.Column="2" RowDefinitions="Auto, *">
+                <TextBox Name="OutputFilter" Grid.Row="0" Margin="0,0,0,5" Text="{Binding filterOutputText}" FontSize="{Binding AppFontSize}"/>
+                <ListBox Name="output" Grid.Row="1" SelectionMode="Multiple" ItemsSource="{Binding filteredOutput}" DoubleTapped="output_DoubleTapped" FontSize="{Binding AppFontSize}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}" FontSize="{Binding $parent[Window].((local:MainWindow)DataContext).AppFontSize}"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Grid>
+
+            <!-- Action Buttons & Settings Column -->
+            <StackPanel Grid.Column="3" Margin="10,0,0,0" Spacing="10">
+                <Button Content="{DynamicResource default}" HorizontalAlignment="Stretch" Click="Default_Items" FontSize="{Binding AppFontSize}"/>
+                <Button Content="{DynamicResource gems}" HorizontalAlignment="Stretch" Click="All_Gems" FontSize="{Binding AppFontSize}"/>
+                <Button Content="{DynamicResource consumables}" HorizontalAlignment="Stretch" Click="All_Consumables" FontSize="{Binding AppFontSize}"/>
+                <Button Content="{DynamicResource lr_mats}" HorizontalAlignment="Stretch" Click="LR_Materials" FontSize="{Binding AppFontSize}"/>
+                <Button Content="{DynamicResource hr_mats}" HorizontalAlignment="Stretch" Click="HR_Materials" FontSize="{Binding AppFontSize}"/>
+                <Button Content="{DynamicResource clear}" HorizontalAlignment="Stretch" Click="Clear_Button" FontSize="{Binding AppFontSize}"/>
+                
+                <Separator Height="10" Opacity="0"/>
+                
+                <TextBlock Text="Font Size" HorizontalAlignment="Center" FontSize="{Binding AppFontSize}"/>
+                <Slider Minimum="10" Maximum="35" Value="{Binding AppFontSize}"/>
+                
+                <Separator Height="5" Opacity="0"/>
+
+                <RadioButton GroupName="InsertMode" Content="{DynamicResource insertTop}" IsChecked="{Binding IsInsertTop}" FontSize="{Binding AppFontSize}"/>
+                <RadioButton GroupName="InsertMode" Content="{DynamicResource insertBottom}" IsChecked="{Binding IsInsertBottom}" FontSize="{Binding AppFontSize}"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

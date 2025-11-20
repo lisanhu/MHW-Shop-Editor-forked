@@ -1,0 +1,31 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <system:String x:Key="title">MHW Shop Editor</system:String>
+    <system:String x:Key="file">File</system:String>
+    <system:String x:Key="open">Open</system:String>
+    <system:String x:Key="save">Save</system:String>
+    <system:String x:Key="lang">Language</system:String>
+    <system:String x:Key="default">Default Items</system:String>
+    <system:String x:Key="hrgems">HR Gems</system:String>
+    <system:String x:Key="plusgems">Jewel+ Gems</system:String>
+    <system:String x:Key="fourgems">Jewel 4 Gems</system:String>
+    <system:String x:Key="clear">Clear Items</system:String>
+    <system:String x:Key="consumables">Consumables</system:String>
+    <system:String x:Key="lr_mats">LR Materials</system:String>
+    <system:String x:Key="hr_mats">HR Materials</system:String>
+    <system:String x:Key="mr_mats">MR Materials</system:String>
+    <system:String x:Key="mr_parts">MR Parts</system:String>
+    <system:String x:Key="gl_mats">GL Parts</system:String>
+    <system:String x:Key="settings">Settings</system:String>
+    <system:String x:Key="insertTop">Insert to Top</system:String>
+    <system:String x:Key="insertBottom">Insert to Bottom</system:String>
+    <system:String x:Key="sortID">Sort by ID</system:String>
+    <system:String x:Key="sortName">Sort by Name</system:String>
+    <system:String x:Key="filterContains">Contains Word</system:String>
+    <system:String x:Key="filterWhole">Match Word</system:String>
+    <system:String x:Key="filterHide">Hide Matching</system:String>
+    <system:String x:Key="count">Item Count:</system:String>
+    <system:String x:Key="results">Results:</system:String>
+</ResourceDictionary>
