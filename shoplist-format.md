@@ -72,6 +72,7 @@ Word 6 (+0x0C) : Row Index (duplicate of Word 0)
 ## Counting items
 
 * Each 14-byte row is one item.
+* The maximum number of items supported is **255**.
 * `shopList_01.slt` is 3580 bytes -> (3580 - 10) / 14 = 255 items.
 * `shopList_10.slt` is 3146 bytes -> (3146 - 10) / 14 = 224 items.
 

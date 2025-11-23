@@ -17,25 +17,19 @@
             </MenuItem>
             <!-- Settings Menu Removed -->
             <MenuItem Header="{DynamicResource lang}" FontSize="{Binding AppFontSize}">
-                <MenuItem StaysOpenOnClick="True" FontSize="{Binding AppFontSize}">
-                    <MenuItem.Header>
-                        <ComboBox Width="150" SelectionChanged="ComboBox_SelectionChanged" SelectedIndex="{Binding CurrentLanguageIndex}" FontSize="{Binding AppFontSize}">
-                            <ComboBoxItem Content="Arabic" Tag="ara" FontSize="{Binding AppFontSize}"/>
-                            <ComboBoxItem Content="Chinese (S)" Tag="chS" FontSize="{Binding AppFontSize}"/>
-                            <ComboBoxItem Content="Chinese (T)" Tag="chT" FontSize="{Binding AppFontSize}"/>
-                            <ComboBoxItem Content="English" Tag="eng" FontSize="{Binding AppFontSize}"/>
-                            <ComboBoxItem Content="French" Tag="fre" FontSize="{Binding AppFontSize}"/>
-                            <ComboBoxItem Content="German" Tag="ger" FontSize="{Binding AppFontSize}"/>
-                            <ComboBoxItem Content="Italian" Tag="ita" FontSize="{Binding AppFontSize}"/>
-                            <ComboBoxItem Content="Japanese" Tag="jpn" FontSize="{Binding AppFontSize}"/>
-                            <ComboBoxItem Content="Korean" Tag="kor" FontSize="{Binding AppFontSize}"/>
-                            <ComboBoxItem Content="Polish" Tag="pol" FontSize="{Binding AppFontSize}"/>
-                            <ComboBoxItem Content="Portuguese (B)" Tag="ptB" FontSize="{Binding AppFontSize}"/>
-                            <ComboBoxItem Content="Russian" Tag="rus" FontSize="{Binding AppFontSize}"/>
-                            <ComboBoxItem Content="Spanish" Tag="spa" FontSize="{Binding AppFontSize}"/>
-                        </ComboBox>
-                    </MenuItem.Header>
-                </MenuItem>
+                <MenuItem Header="Arabic" Tag="ara" Click="ChangeLanguage" FontSize="{Binding AppFontSize}"/>
+                <MenuItem Header="Chinese (S)" Tag="chS" Click="ChangeLanguage" FontSize="{Binding AppFontSize}"/>
+                <MenuItem Header="Chinese (T)" Tag="chT" Click="ChangeLanguage" FontSize="{Binding AppFontSize}"/>
+                <MenuItem Header="English" Tag="eng" Click="ChangeLanguage" FontSize="{Binding AppFontSize}"/>
+                <MenuItem Header="French" Tag="fre" Click="ChangeLanguage" FontSize="{Binding AppFontSize}"/>
+                <MenuItem Header="German" Tag="ger" Click="ChangeLanguage" FontSize="{Binding AppFontSize}"/>
+                <MenuItem Header="Italian" Tag="ita" Click="ChangeLanguage" FontSize="{Binding AppFontSize}"/>
+                <MenuItem Header="Japanese" Tag="jpn" Click="ChangeLanguage" FontSize="{Binding AppFontSize}"/>
+                <MenuItem Header="Korean" Tag="kor" Click="ChangeLanguage" FontSize="{Binding AppFontSize}"/>
+                <MenuItem Header="Polish" Tag="pol" Click="ChangeLanguage" FontSize="{Binding AppFontSize}"/>
+                <MenuItem Header="Portuguese (B)" Tag="ptB" Click="ChangeLanguage" FontSize="{Binding AppFontSize}"/>
+                <MenuItem Header="Russian" Tag="rus" Click="ChangeLanguage" FontSize="{Binding AppFontSize}"/>
+                <MenuItem Header="Spanish" Tag="spa" Click="ChangeLanguage" FontSize="{Binding AppFontSize}"/>
             </MenuItem>
         </Menu>
 
@@ -78,12 +72,12 @@
                 <Button Content="{DynamicResource lr_mats}" HorizontalAlignment="Stretch" Click="LR_Materials" FontSize="{Binding AppFontSize}"/>
                 <Button Content="{DynamicResource hr_mats}" HorizontalAlignment="Stretch" Click="HR_Materials" FontSize="{Binding AppFontSize}"/>
                 <Button Content="{DynamicResource clear}" HorizontalAlignment="Stretch" Click="Clear_Button" FontSize="{Binding AppFontSize}"/>
-                
+
                 <Separator Height="10" Opacity="0"/>
-                
+
                 <TextBlock Text="Font Size" HorizontalAlignment="Center" FontSize="{Binding AppFontSize}"/>
                 <Slider Minimum="10" Maximum="35" Value="{Binding AppFontSize}"/>
-                
+
                 <Separator Height="5" Opacity="0"/>
 
                 <RadioButton GroupName="InsertMode" Content="{DynamicResource insertTop}" IsChecked="{Binding IsInsertTop}" FontSize="{Binding AppFontSize}"/>

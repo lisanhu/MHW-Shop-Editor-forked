@@ -15,7 +15,7 @@ namespace MHWShopEditor
     {
         private const int HeaderLength = 10;
         private const int RowLength = 14;
-        private const int MaxSlots = 256;
+        private const int MaxSlots = 255;
 
         public static ShopListDocument Read(byte[] data)
         {

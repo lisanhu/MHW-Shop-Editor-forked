@@ -69,35 +69,7 @@ namespace MHWShopEditor
         }
 
         // Helper to map Language Code to ComboBox Index
-        public int CurrentLanguageIndex
-        {
-            get
-            {
-                string lang = Settings.Default.Language;
-                switch (lang)
-                {
-                    case "ara": return 0;
-                    case "chS": return 1;
-                    case "chT": return 2;
-                    case "eng": return 3;
-                    case "fre": return 4;
-                    case "ger": return 5;
-                    case "ita": return 6;
-                    case "jpn": return 7;
-                    case "kor": return 8;
-                    case "pol": return 9;
-                    case "ptB": return 10;
-                    case "rus": return 11;
-                    case "spa": return 12;
-                    default: return 3; // Default eng
-                }
-            }
-            set
-            {
-                // Setter handled by ComboBox_SelectionChanged logic,
-                // but we notify property changed to update UI if changed programmatically
-            }
-        }
+
 
         public new event PropertyChangedEventHandler? PropertyChanged;
 
@@ -105,6 +77,8 @@ namespace MHWShopEditor
         {
             InitializeComponent();
             DataContext = this;
+
+            ApplyLanguageResources(Settings.Default.Language);
 
             // Sync static insert variable with Settings
             insert = Settings.Default.IsInsertTop ? 0 : -1;
@@ -281,40 +255,29 @@ namespace MHWShopEditor
             }
         }
 
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void ChangeLanguage(object sender, RoutedEventArgs e)
         {
-            if (sender is ComboBox cb && cb.SelectedItem is ComboBoxItem cbi && cbi.Tag != null)
+            if (sender is MenuItem mi && mi.Tag != null)
             {
-                string selectedLang = cbi.Tag?.ToString() ?? "eng";
+                string selectedLang = mi.Tag?.ToString() ?? "eng";
 
                 // Only reload if different
                 if (selectedLang != Settings.Default.Language)
                 {
                     Settings.Default.Language = selectedLang;
                     Settings.Default.Save();
-                    // Update property helper if needed, though generic binding might handle it
+                }
+                else
+                {
+                    return;
                 }
 
-                string uri = $"avares://MHWShopEditor/Lang.{selectedLang}.axaml";
+                ApplyLanguageResources(selectedLang);
 
                 try
                 {
                     if (Application.Current != null)
                     {
-                        Application.Current.Resources.MergedDictionaries.Clear();
-
-                        // Fallback English
-                        var engUri = new Uri("avares://MHWShopEditor/Lang.eng.axaml");
-                        var engRes = (ResourceDictionary)AvaloniaXamlLoader.Load(engUri);
-                        Application.Current.Resources.MergedDictionaries.Add(engRes);
-
-                        // Target Language
-                        if (selectedLang != "eng")
-                        {
-                            var loaded = (ResourceDictionary)AvaloniaXamlLoader.Load(new Uri(uri));
-                            Application.Current.Resources.MergedDictionaries.Add(loaded);
-                        }
-
                         LoadHiddenList();
                         // Save current list keys before clearing? No, Clear() restores to listboxin.
                         // But we want to MAINTAIN the current shop list, just translate it.
@@ -354,7 +317,33 @@ namespace MHWShopEditor
             }
         }
 
-        // Removed Insertion_Method
+        private void ApplyLanguageResources(string lang)
+        {
+            string uri = $"avares://MHWShopEditor/Lang.{lang}.axaml";
+            try
+            {
+                if (Application.Current != null)
+                {
+                    Application.Current.Resources.MergedDictionaries.Clear();
+
+                    // Fallback English
+                    var engUri = new Uri("avares://MHWShopEditor/Lang.eng.axaml");
+                    var engRes = (ResourceDictionary)AvaloniaXamlLoader.Load(engUri);
+                    Application.Current.Resources.MergedDictionaries.Add(engRes);
+
+                    // Target Language
+                    if (lang != "eng")
+                    {
+                        var loaded = (ResourceDictionary)AvaloniaXamlLoader.Load(new Uri(uri));
+                        Application.Current.Resources.MergedDictionaries.Add(loaded);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Failed to load language: {ex.Message}");
+            }
+        }
 
         private void Default_Items(object sender, RoutedEventArgs e)
         {
