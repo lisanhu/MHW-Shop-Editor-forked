@@ -6,14 +6,18 @@ namespace MHWShopEditor
     {
         public string Key { get; set; } = "";
         public string Value { get; set; } = "";
-        public int Hex 
-        { 
-            get 
+        public int Hex
+        {
+            get
             {
-                if (Key.Length > 4)
-                    return Convert.ToInt32(this.Key.Substring(4), 16); 
+                try
+                {
+                    if (Key.Length > 4)
+                        return Convert.ToInt32(this.Key.Substring(4), 16);
+                }
+                catch { }
                 return 0;
-            } 
+            }
         }
         public override string ToString()
         {

@@ -20,6 +20,7 @@ namespace MHWShopEditor
         public static readonly string[] CONSUMABLES = { "0001", "0002", "0003", "0004", "0005", "0006", "0007", "0008", "0009", "000A", "000B", "000C", "000D", "000E", "000F", "0010", "0011", "0012", "0013", "0014", "0015", "0016", "0017", "0018", "0019", "001A", "001B", "001C", "001D", "001E", "001F", "0020", "0021", "0022", "0023", "0024", "0025", "0026", "0027", "0028", "0029", "002A", "002B", "002C", "002D", "002E", "002F", "0030", "0031", "0032", "0033", "0034", "0035", "0036", "0037", "0038", "0039", "003A", "003B", "003C", "003D", "003E", "003F", "0040", "0041", "0042", "0043", "0044", "0045", "0046", "0047", "0048", "0049", "004A", "004B", "004C", "004D", "004E", "004F", "0050", "0051", "0052", "0053", "0054", "005E", "005F", "0060", "0061", "0062", "0063", "0064", "0065", "0066", "0067", "0068", "0069", "006A", "006B", "006C", "006D", "006E", "006F", "0070", "0071", "008A", "008B", "008C", "008D", "008E", "008F", "0090", "0091", "0092", "0093", "0094", "0095", "0096", "0097", "0098", "0099", "009A", "009B", "009C", "009D", "009E", "009F", "00A0", "00A1", "00A2", "00A3", "00A4", "00A5", "00A6", "00A7", "00A8", "00A9", "00AA", "00AB", "00AE", "00AF", "00B0", "00B1", "00B2", "00B3", "00B4", "00C3", "00C4", "00C5", "00C6", "00C7" };
         public static readonly string[] LR_MATERIALS = { "00CD", "00CE", "00CF", "00D2", "00D3", "00D5", "00D8", "00E1", "00E2", "00E3", "00E4", "00E5", "00E6", "00EA", "00EB", "00EC", "00ED", "00EE", "00F3", "00F5", "00F7", "00F9", "00FB", "00FD", "00FF", "0101", "0103", "0108", "0109", "010B", "010D", "010F", "0110", "0111", "0114", "0115", "0118", "011C", "011D", "0121", "0122", "0125", "0126", "0129", "012A", "012B", "012E", "012F", "0130", "0131", "0135", "0136", "0137", "0138", "013D", "013E", "013F", "0140", "0141", "0146", "0147", "0148", "0149", "014A", "014B", "014F", "0150", "0151", "0152", "0157", "0158", "0159", "015A", "015B", "0160", "0161", "0162", "0163", "0164", "0165", "016B", "016C", "016D", "016E", "016F", "0176", "0177", "0178", "0179", "017E", "017F", "0180", "0181", "0186", "0187", "0188", "0189", "018A", "018F", "0190", "0191", "0192", "0194", "0198", "0199", "019A", "019B", "019C", "019D", "01A3", "01A4", "01A5", "01A6", "01A7", "01A8", "01AE", "01AF", "01B0", "01B1", "01B2", "01B3", "01B4", "01BE", "01BF", "01C0", "01C1", "01C2", "01C3", "01CB", "01CC", "01CD", "01CE", "01D3", "01D4", "01D5", "01D6", "01D8" };
         public static readonly string[] HR_MATERIALS = { "00D0", "00D1", "00D4", "00D6", "00D7", "00D9", "00DA", "00DB", "00E7", "00E8", "00E9", "00EF", "00F0", "00F1", "00F2", "00F4", "00F6", "00F8", "00FA", "00FC", "00FE", "0100", "0102", "0104", "0105", "0106", "0107", "010A", "010C", "010E", "0112", "0113", "0116", "0117", "0119", "011A", "011B", "011E", "011F", "0120", "0123", "0124", "0127", "0128", "012C", "012D", "0132", "0133", "0134", "0139", "013A", "013B", "013C", "0142", "0143", "0144", "0145", "014C", "014D", "014E", "0153", "0154", "0155", "0156", "015C", "015D", "015E", "015F", "0166", "0167", "0168", "0169", "016A", "0170", "0171", "0172", "0173", "0174", "0175", "017A", "017B", "017C", "017D", "0182", "0183", "0184", "0185", "018B", "018C", "018D", "018E", "0195", "0196", "0197", "019E", "019F", "01A0", "01A1", "01A2", "01A9", "01AA", "01AB", "01AC", "01AD", "01B5", "01B6", "01B7", "01B8", "01B9", "01BA", "01BB", "01BC", "01BD", "01C4", "01C5", "01C6", "01C7", "01C8", "01C9", "01CA", "01CF", "01D0", "01D1", "01D9", "01DA", "01DB", "01DC", "01DD", "01DE", "01DF", "01E0", "01E1", "01E2", "01E3", "01E4", "01E5", "01E6", "01E7", "01E8", "01E9", "01EA", "01EB", "01EC", "01ED", "01EE", "01EF", "01F0", "01F1", "01F2", "01F4", "01F5", "01F6", "01F7", "01F8", "01F9", "01FA", "01FB", "01FC", "01FD", "01FE", "01FF", "0201", "0202", "0203", "0204", "0205", "0206", "0207", "0208", "0209", "020A", "020B", "020C", "020D", "020E", "020F", "0210", "0211", "0212", "0213", "0214", "0215", "0216", "0217", "0218", "0219", "036F", "0370", "0371", "0372", "0373", "0374", "0375", "0376", "0377", "0378", "0379", "037A", "037B", "037C", "037F", "0380", "0381", "0382", "0383", "0384", "0385" };
+        private static readonly Item PageBreakItem = new Item { Key = "SPECIAL_PAGE_BREAK", Value = "--- PAGE BREAK ---" };
         public static int insert = -1;
         private ShopListDocument? _loadedDocument;
         private static Item[] hiddenlist;
@@ -77,6 +78,16 @@ namespace MHWShopEditor
         {
             InitializeComponent();
             DataContext = this;
+
+            var outputBox = this.FindControl<ListBox>("output");
+            if (outputBox != null)
+            {
+                outputBox.AddHandler(DragDrop.DragOverEvent, DragOver);
+                outputBox.AddHandler(DragDrop.DropEvent, Drop);
+                outputBox.AddHandler(InputElement.PointerPressedEvent, OnPointerPressed, Avalonia.Interactivity.RoutingStrategies.Tunnel);
+                outputBox.AddHandler(InputElement.PointerMovedEvent, OnPointerMoved, Avalonia.Interactivity.RoutingStrategies.Tunnel);
+                outputBox.AddHandler(InputElement.PointerReleasedEvent, OnPointerReleased, Avalonia.Interactivity.RoutingStrategies.Tunnel);
+            }
 
             ApplyLanguageResources(Settings.Default.Language);
 
@@ -150,6 +161,8 @@ namespace MHWShopEditor
             }
             else
             {
+                int baseIndex = GetInsertionIndex();
+
                 if (insert == 0) // Top
                 {
                     items.Reverse();
@@ -160,19 +173,24 @@ namespace MHWShopEditor
                         if (result != null)
                         {
                             listboxin.Remove(result);
-                            listboxout.Insert(0, result);
+                            listboxout.Insert(baseIndex, result);
                         }
                     }
                 }
                 else // Bottom
                 {
+                    int currentIndex = baseIndex;
                     foreach (string item in items)
                     {
                         var result = itemlist.SingleOrDefault(x => x.Key.Length > 4 && x.Key.Substring(4) == item);
                         if (result != null)
                         {
                             listboxin.Remove(result);
-                            listboxout.Add(result);
+                            if (currentIndex >= listboxout.Count)
+                                listboxout.Add(result);
+                            else
+                                listboxout.Insert(currentIndex, result);
+                            currentIndex++;
                         }
                     }
                 }
@@ -317,6 +335,8 @@ namespace MHWShopEditor
             }
         }
 
+
+
         private void ApplyLanguageResources(string lang)
         {
             string uri = $"avares://MHWShopEditor/Lang.{lang}.axaml";
@@ -356,12 +376,56 @@ namespace MHWShopEditor
             SaveShopListState();
         }
 
+        private void Add_Page_Break(object sender, RoutedEventArgs e)
+        {
+            int index = GetInsertionIndex();
+            if (index >= listboxout.Count)
+            {
+                listboxout.Add(PageBreakItem);
+            }
+            else
+            {
+                listboxout.Insert(index, PageBreakItem);
+            }
+            SaveShopListState();
+            Refresh();
+        }
+
+        private void Deselect_Output(object sender, RoutedEventArgs e)
+        {
+            var outputBox = this.FindControl<ListBox>("output");
+            if (outputBox != null)
+            {
+                outputBox.SelectedItems?.Clear();
+            }
+        }
+
+        private int GetInsertionIndex()
+        {
+            var outputBox = this.FindControl<ListBox>("output");
+            int index = outputBox?.SelectedIndex ?? -1;
+
+            if (insert == 0) // Top mode
+            {
+                // Insert at the selected position (shifting selected down), or at 0 if none
+                return (index != -1) ? index : 0;
+            }
+            else // Bottom mode
+            {
+                // Insert after the selected position, or at end if none
+                return (index != -1) ? index + 1 : listboxout.Count;
+            }
+        }
+
         private void Clear()
         {
             List<Item> itemlist = new List<Item>();
             foreach (Item item in listboxout)
             {
-                listboxin.Add(item);
+                if (item != PageBreakItem)
+                {
+                    listboxin.Add(item);
+                }
                 itemlist.Add(item);
             }
             foreach (Item item in itemlist)
@@ -424,19 +488,26 @@ namespace MHWShopEditor
                     if (item is Item i) selectedList.Add(i);
                 }
 
+                int baseIndex = GetInsertionIndex();
+
                 if (insert == 0)
                 {
                     selectedList.Reverse();
                     foreach (Item item in selectedList)
                     {
-                        listboxout.Insert(0, item);
+                        listboxout.Insert(baseIndex, item);
                     }
                 }
                 else
                 {
+                    int currentIndex = baseIndex;
                     foreach (Item item in selectedList)
                     {
-                        listboxout.Add(item);
+                        if (currentIndex >= listboxout.Count)
+                            listboxout.Add(item);
+                        else
+                            listboxout.Insert(currentIndex, item);
+                        currentIndex++;
                     }
                 }
                 foreach (Item item in selectedList)
@@ -463,7 +534,10 @@ namespace MHWShopEditor
                     if (obj is Item item)
                     {
                         itemlist.Add(item);
-                        listboxin.Add(item);
+                        if (item != PageBreakItem)
+                        {
+                            listboxin.Add(item);
+                        }
                     }
                 }
                 foreach (Item item in itemlist)
@@ -481,9 +555,28 @@ namespace MHWShopEditor
         private static List<uint> CollectOutputItemIds()
         {
             var ids = new List<uint>(listboxout.Count);
+            int currentBlockCount = 0;
+
             foreach (var item in listboxout)
             {
-                ids.Add(ParseItemId(item));
+                if (item == PageBreakItem)
+                {
+                    int remainder = currentBlockCount % 11;
+                    if (remainder != 0)
+                    {
+                        int padding = 11 - remainder;
+                        for (int i = 0; i < padding; i++)
+                        {
+                            ids.Add(0); // 0000
+                        }
+                    }
+                    currentBlockCount = 0;
+                }
+                else
+                {
+                    ids.Add(ParseItemId(item));
+                    currentBlockCount++;
+                }
             }
             return ids;
         }
@@ -575,6 +668,104 @@ namespace MHWShopEditor
         private void output_DoubleTapped(object sender, TappedEventArgs e)
         {
             Send_In(sender, new RoutedEventArgs());
+        }
+
+        private Point? _dragStartPoint;
+        private Item? _dragCandidateItem;
+
+        private void OnPointerPressed(object sender, PointerPressedEventArgs e)
+        {
+            var point = e.GetCurrentPoint(sender as Control);
+            if (point.Properties.IsLeftButtonPressed)
+            {
+                if (e.Source is Control source && source.DataContext is Item item)
+                {
+                    _dragStartPoint = e.GetPosition(null);
+                    _dragCandidateItem = item;
+                    Console.WriteLine($"PointerPressed at {_dragStartPoint}");
+                }
+            }
+        }
+
+        private async void OnPointerMoved(object sender, PointerEventArgs e)
+        {
+            if (_dragStartPoint == null || _dragCandidateItem == null) return;
+
+            var point = e.GetCurrentPoint(sender as Control);
+            if (!point.Properties.IsLeftButtonPressed)
+            {
+                _dragStartPoint = null;
+                _dragCandidateItem = null;
+                Console.WriteLine("PointerMoved: Left button not pressed, cancelling drag");
+                return;
+            }
+
+            var currentPoint = e.GetPosition(null);
+            var deltaX = _dragStartPoint.Value.X - currentPoint.X;
+            var deltaY = _dragStartPoint.Value.Y - currentPoint.Y;
+
+            if ((deltaX * deltaX + deltaY * deltaY) > 100)
+            {
+                Console.WriteLine("Drag threshold exceeded, starting drag");
+                _dragStartPoint = null;
+
+                var dragData = new DataObject();
+                dragData.Set("Item", _dragCandidateItem);
+                _dragCandidateItem = null;
+
+                await DragDrop.DoDragDrop(e, dragData, DragDropEffects.Move);
+            }
+        }
+
+        private void OnPointerReleased(object sender, PointerReleasedEventArgs e)
+        {
+            if (_dragStartPoint != null)
+            {
+                Console.WriteLine("PointerReleased, cancelling drag check");
+            }
+            _dragStartPoint = null;
+            _dragCandidateItem = null;
+        }
+
+        private void DragOver(object sender, DragEventArgs e)
+        {
+            e.DragEffects = DragDropEffects.Move;
+        }
+
+        private void Drop(object sender, DragEventArgs e)
+        {
+            Console.WriteLine("Drop event triggered");
+            var data = e.Data.Get("Item");
+            if (data is Item sourceItem)
+            {
+                Console.WriteLine($"Dropped item: {sourceItem.Value}");
+                if (e.Source is Control targetControl && targetControl.DataContext is Item targetItem)
+                {
+                    Console.WriteLine($"Target item: {targetItem.Value}");
+                    if (listboxout.Contains(targetItem))
+                    {
+                        int sourceIndex = listboxout.IndexOf(sourceItem);
+                        int targetIndex = listboxout.IndexOf(targetItem);
+
+                        Console.WriteLine($"Source Index: {sourceIndex}, Target Index: {targetIndex}");
+
+                        if (sourceIndex != -1 && targetIndex != -1 && sourceIndex != targetIndex)
+                        {
+                            Avalonia.Threading.Dispatcher.UIThread.Post(() =>
+                            {
+                                listboxout.RemoveAt(sourceIndex);
+                                listboxout.Insert(targetIndex, sourceItem);
+                                SaveShopListState();
+                                Refresh();
+                            });
+                        }
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Drop target is not a valid item control");
+                }
+            }
         }
     }
 }

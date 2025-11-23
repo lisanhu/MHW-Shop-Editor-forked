@@ -55,7 +55,7 @@
             <!-- Output Column -->
             <Grid Grid.Column="2" RowDefinitions="Auto, *">
                 <TextBox Name="OutputFilter" Grid.Row="0" Margin="0,0,0,5" Text="{Binding filterOutputText}" FontSize="{Binding AppFontSize}"/>
-                <ListBox Name="output" Grid.Row="1" SelectionMode="Multiple" ItemsSource="{Binding filteredOutput}" DoubleTapped="output_DoubleTapped" FontSize="{Binding AppFontSize}">
+                <ListBox Name="output" Grid.Row="1" SelectionMode="Multiple" ItemsSource="{Binding filteredOutput}" DoubleTapped="output_DoubleTapped" FontSize="{Binding AppFontSize}" DragDrop.AllowDrop="True">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding}" FontSize="{Binding $parent[Window].((local:MainWindow)DataContext).AppFontSize}"/>
@@ -72,6 +72,8 @@
                 <Button Content="{DynamicResource lr_mats}" HorizontalAlignment="Stretch" Click="LR_Materials" FontSize="{Binding AppFontSize}"/>
                 <Button Content="{DynamicResource hr_mats}" HorizontalAlignment="Stretch" Click="HR_Materials" FontSize="{Binding AppFontSize}"/>
                 <Button Content="{DynamicResource clear}" HorizontalAlignment="Stretch" Click="Clear_Button" FontSize="{Binding AppFontSize}"/>
+                <Button Content="Insert Page Break" HorizontalAlignment="Stretch" Click="Add_Page_Break" FontSize="{Binding AppFontSize}"/>
+                <Button Content="Deselect Output" HorizontalAlignment="Stretch" Click="Deselect_Output" FontSize="{Binding AppFontSize}"/>
 
                 <Separator Height="10" Opacity="0"/>
 
