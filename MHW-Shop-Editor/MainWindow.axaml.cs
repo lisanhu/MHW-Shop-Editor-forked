@@ -163,15 +163,28 @@ namespace MHWShopEditor
             {
                 int baseIndex = GetInsertionIndex();
 
+                bool pendingBreak = false;
+
                 if (insert == 0) // Top
                 {
                     items.Reverse();
                     foreach (string item in items)
                     {
+                        if (item == "FFFF")
+                        {
+                            pendingBreak = true;
+                            continue;
+                        }
+
                         // item string here is just the hex part (e.g. "0001") based on existing logic
                         var result = itemlist.SingleOrDefault(x => x.Key.Length > 4 && x.Key.Substring(4) == item);
                         if (result != null)
                         {
+                            if (pendingBreak)
+                            {
+                                listboxout.Insert(baseIndex, PageBreakItem);
+                                pendingBreak = false;
+                            }
                             listboxin.Remove(result);
                             listboxout.Insert(baseIndex, result);
                         }
@@ -182,9 +195,25 @@ namespace MHWShopEditor
                     int currentIndex = baseIndex;
                     foreach (string item in items)
                     {
+                        if (item == "FFFF")
+                        {
+                            pendingBreak = true;
+                            continue;
+                        }
+
                         var result = itemlist.SingleOrDefault(x => x.Key.Length > 4 && x.Key.Substring(4) == item);
                         if (result != null)
                         {
+                            if (pendingBreak)
+                            {
+                                if (currentIndex >= listboxout.Count)
+                                    listboxout.Add(PageBreakItem);
+                                else
+                                    listboxout.Insert(currentIndex, PageBreakItem);
+                                currentIndex++;
+                                pendingBreak = false;
+                            }
+
                             listboxin.Remove(result);
                             if (currentIndex >= listboxout.Count)
                                 listboxout.Add(result);
@@ -567,7 +596,7 @@ namespace MHWShopEditor
                         int padding = 11 - remainder;
                         for (int i = 0; i < padding; i++)
                         {
-                            ids.Add(0); // 0000
+                            ids.Add(0xFFFF);
                         }
                     }
                     currentBlockCount = 0;
